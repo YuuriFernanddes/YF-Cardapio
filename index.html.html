@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YF Sites cria cardápios digitais profissionais com painel de edição para restaurantes e lanchonetes.">
+<title>YF Sites | Cardápios digitais</title>
+<style>
+:root{--bg:#0a0d14;--panel:#121927;--panel2:#182235;--text:#f4f7fb;--muted:#a9b4c5;--line:#29364b;--blue:#67a8ff;--cyan:#5eead4;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#0a0d14eF;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:1.25rem;letter-spacing:.04em}.logo span{color:var(--blue)}.navlinks{display:flex;gap:25px;color:var(--muted);font-size:.93rem}.navlinks a:hover{color:var(--white)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;background:var(--blue);color:#07101e;font-weight:800;border:0;cursor:pointer}.btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.hero{padding:82px 0 68px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}.hero h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.04;letter-spacing:-.045em;margin:14px 0 20px}.hero h1 span{color:var(--blue)}.hero p{color:var(--muted);font-size:1.08rem;max-width:590px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.note{font-size:.82rem!important;color:#8290a5!important;margin-top:15px}
+.preview{background:linear-gradient(145deg,#1b2940,#101725);border:1px solid #33435d;border-radius:22px;padding:18px;box-shadow:0 25px 70px #0008;transform:rotate(1deg)}.browserbar{display:flex;gap:6px;padding:3px 3px 14px}.dot{height:8px;width:8px;border-radius:50%;background:#63718a}.menu{background:#f6f3ed;color:#202329;border-radius:14px;padding:20px}.menuhead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd6c9;padding-bottom:13px}.menuhead strong{font-size:1.25rem}.tag{font-size:.7rem;background:#e6f4ed;color:#236849;padding:5px 9px;border-radius:30px;font-weight:800}.food{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid #e7e0d5}.food:last-child{border:0}.foodpic{width:62px;height:58px;border-radius:10px;background:linear-gradient(135deg,#f5b35b,#9b492a);display:grid;place-items:center;font-size:1.7rem}.food:nth-child(3) .foodpic{background:linear-gradient(135deg,#d4a66b,#543322)}.food:nth-child(4) .foodpic{background:linear-gradient(135deg,#f4d28d,#a85a37)}.food small{display:block;color:#6d6a65}.price{margin-left:auto;font-weight:900}
+section{padding:70px 0}.sectionhead{max-width:680px;margin-bottom:30px}.sectionhead h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;margin:9px 0}.sectionhead p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:23px}.icon{font-size:1.5rem}.card h3{margin:12px 0 7px}.card p{color:var(--muted);margin:0;font-size:.94rem}
+.demo{background:#0e1420;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:.8fr 1.2fr}.demoleft{padding:28px;background:#131e30}.demoleft p{color:var(--muted)}.demoright{padding:25px}.demo label{display:block;color:var(--muted);font-size:.82rem;margin:10px 0 5px}.demo input{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#0a0f18;color:var(--text)}.demo input[type=file]{padding:8px}.preview-photo{width:72px;height:66px;object-fit:cover;border-radius:10px;background:#263449;display:none}.demo .btn{margin-top:13px}.status{color:var(--cyan);font-size:.82rem;min-height:22px}.productlist{display:grid;gap:10px;margin-top:18px}.productrow{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--panel2);padding:12px;border-radius:10px}.productrow small{color:var(--muted)}
+.steps{counter-reset:step}.step{position:relative;padding-left:55px;min-height:44px;margin:18px 0}.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#203b5e;color:#a9d0ff;font-weight:900}
+.cta{background:linear-gradient(120deg,#172b46,#112c35);border:1px solid #31506a;border-radius:22px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:2rem;margin:0 0 8px}.cta p{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.disclaimer{font-size:.8rem;color:#8996aa;margin-top:12px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:55px}.preview{transform:none}.grid3{grid-template-columns:1fr}.demo{grid-template-columns:1fr}.navlinks{display:none}.cta{display:block}.cta .btn{margin-top:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav><a class="logo" href="#">YF <span>SITES</span></a><div class="navlinks"><a href="#beneficios">Benefícios</a><a href="#painel">Painel de edição</a><a href="#como-funciona">Como funciona</a></div><a class="btn" href="#contato">Solicitar orçamento</a></nav></div></header>
+<main>
+<div class="wrap hero">
+ <div><div class="eyebrow">Cardápios digitais para negócios de alimentação</div><h1>Seu cardápio online. <span>Do seu jeito.</span></h1><p>Apresente seus lanches, pratos e bebidas em um site bonito, fácil de acessar pelo celular e com uma área de edição para você atualizar seu cardápio.</p><div class="actions"><a class="btn" href="#contato">Quero meu cardápio</a><a class="btn secondary" href="#painel">Conhecer o painel</a></div><p class="note">Projeto demonstrativo da YF Sites. Recursos administrativos serão ativados na versão contratada.</p></div>
+ <div class="preview"><div class="browserbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="menu"><div class="menuhead"><div><strong>Brasa Burger</strong><br><small>Hambúrguer artesanal</small></div><span class="tag">ABERTO</span></div><div class="food"><div class="foodpic">🍔</div><div><b>Brasa Clássico</b><small>Pão brioche, carne, queijo e molho da casa.</small></div><div class="price">R$ 29,90</div></div><div class="food"><div class="foodpic">🍔</div><div><b>Cheddar Bacon</b><small>Cheddar cremoso e bacon crocante.</small></div><div class="price">R$ 34,90</div></div><div class="food"><div class="foodpic">🍟</div><div><b>Batata da Casa</b><small>Porção crocante para acompanhar.</small></div><div class="price">R$ 16,90</div></div></div></div>
+</div>
+<section id="beneficios"><div class="wrap"><div class="sectionhead"><div class="eyebrow">Uma solução prática</div><h2>Mais facilidade para o cliente e para quem administra.</h2><p>O cardápio fica disponível por um link. O proprietário pode gerenciar os produtos pela área administrativa, sem precisar editar arquivos do site.</p></div><div class="grid3"><article class="card"><div class="icon">📱</div><h3>Feito para celular</h3><p>Layout adaptado para o cliente consultar o cardápio no celular, tablet ou computador.</p></article><article class="card"><div class="icon">🛠️</div><h3>Área do proprietário</h3><p>Uma área protegida para cadastrar produtos e atualizar nomes, descrições, preços e fotos.</p></article><article class="card"><div class="icon">💬</div><h3>Pedido pelo WhatsApp</h3><p>Atalho para o cliente entrar em contato com o estabelecimento e fazer o pedido.</p></article></div></div></section>
+<section id="painel"><div class="wrap"><div class="sectionhead"><div class="eyebrow">Veja a ideia funcionando</div><h2>Um painel simples para atualizar o cardápio.</h2><p>Abaixo está uma demonstração visual: experimente alterar o nome, a descrição e o preço. Nesta prévia, os dados ficam apenas neste navegador.</p></div>
+<div class="demo"><div class="demoleft"><div class="eyebrow">Painel do proprietário</div><h3>Gerencie seus produtos</h3><p>Na versão final, o acesso será protegido por login e as alterações serão salvas para aparecer no cardápio público.</p><div class="disclaimer">Prévia de interface — não é uma conta real nem salva dados em um servidor.</div></div><div class="demoright"><label for="pname">Nome do produto</label><input id="pname" value="Brasa Clássico"><label for="pdesc">Descrição</label><input id="pdesc" value="Pão brioche, carne, queijo e molho da casa."><label for="pprice">Preço (R$)</label><input id="pprice" value="29,90"><label for="pimage">Foto do produto</label><input id="pimage" type="file" accept="image/*" onchange="previewProductImage(event)"><button class="btn" onclick="updateProduct()">Salvar prévia</button><div class="status" id="status" aria-live="polite"></div><div class="productlist"><div class="productrow"><img id="outimage" class="preview-photo" alt="Prévia da foto do produto"><div><b id="outname">Brasa Clássico</b><br><small id="outdesc">Pão brioche, carne, queijo e molho da casa.</small></div><strong id="outprice">R$ 29,90</strong></div></div></div></div>
+</div></section>
+<section id="como-funciona"><div class="wrap"><div class="sectionhead"><div class="eyebrow">Do primeiro contato à publicação</div><h2>Como funciona</h2></div><div class="grid3"><div class="card steps"><div class="step"><b>Você envia as informações</b><p>Logo, fotos, produtos, preços, contato e identidade do estabelecimento.</p></div></div><div class="card steps"><div class="step"><b>A YF Sites monta o projeto</b><p>Preparamos o cardápio e configuramos a área administrativa contratada.</p></div></div><div class="card steps"><div class="step"><b>Você recebe e administra</b><p>Após os testes e a entrega, o proprietário usa o painel para manter o cardápio atualizado.</p></div></div></div></div></section>
+<section id="contato"><div class="wrap"><div class="cta"><div><h2>Vamos colocar seu cardápio online?</h2><p>Fale com a YF Sites e solicite uma proposta para seu restaurante ou lanchonete.</p></div><a class="btn" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20card%C3%A1pio%20digital." target="_blank" rel="noopener">Conversar pelo WhatsApp</a></div><p class="disclaimer">Antes de publicar: substitua o telefone demonstrativo pelo WhatsApp comercial da YF Sites. O painel apresentado é uma prévia; a integração real com autenticação, banco de dados e armazenamento de imagens ainda precisa ser configurada.</p></div></section>
+</main>
+<footer><div class="wrap foot"><strong>YF SITES</strong><span>Cardápios digitais para negócios locais.</span><span>© 2026 YF Sites</span></div></footer>
+<script>
+function previewProductImage(event){
+ const file=event.target.files && event.target.files[0];
+ if(!file) return;
+ if(!file.type.startsWith('image/')){document.getElementById('status').textContent='Selecione um arquivo de imagem.';return;}
+ const reader=new FileReader();
+ reader.onload=()=>{const img=document.getElementById('outimage');img.src=reader.result;img.style.display='block';document.getElementById('status').textContent='Foto exibida na prévia deste navegador.';};
+ reader.readAsDataURL(file);
+}
+function updateProduct(){
+ const name=document.getElementById('pname').value.trim();
+ const desc=document.getElementById('pdesc').value.trim();
+ const price=document.getElementById('pprice').value.trim();
+ if(!name||!desc||!price){document.getElementById('status').textContent='Preencha todos os campos.';return;}
+ document.getElementById('outname').textContent=name;
+ document.getElementById('outdesc').textContent=desc;
+ document.getElementById('outprice').textContent='R$ '+price;
+ document.getElementById('status').textContent='Prévia atualizada neste navegador.';
+}
+</script>
+</body>
+</html>
